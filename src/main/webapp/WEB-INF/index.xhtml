@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>P03 - Lista</title>
+</h:head>
+<h:body>
+
+	<p:dataTable var="v" value="#{contatoBean.messages}" 
+	paginator="true" rows="15" >
+
+		<p:column sortBy="#{v.nome}" headerText="Nome">
+			<h:outputText value="#{v.nome}" />
+		</p:column>
+		<p:column sortBy="#{v.endereco}" headerText="Endereço">
+			<h:outputText value="#{v.endereco}" />
+		</p:column>
+		<p:column sortBy="#{v.email}" headerText="eMail">
+			<h:outputText value="#{v.email}" />
+		</p:column>
+		<p:column sortBy="#{v.data}" headerText="Data Nascimento">
+			<h:outputText value="#{v.dataNascimento.time}">
+				<f:convertDateTime pattern="dd/MM/yyyy" />
+			</h:outputText>
+		</p:column>		                
+		
+		                
+ 	</p:dataTable>
+ 	
+ 		
+</h:body>
+</html>
